@@ -217,7 +217,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 2 variedades de verduras</li>
                 <li><i class="ion-android-checkmark-circle"></i> 2 variedades de temperos naturais</li>
               </ul>
-              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Solteiro')">Assinar</a>
+              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Solteiro'); $('#planoTitle').html('Plano Solteiro')">Assinar</a>
             </div>
           </div>
 
@@ -246,7 +246,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 3 variedades de verduras</li>
                 <li><i class="ion-android-checkmark-circle"></i> 2 variedades de temperos naturais</li>
               </ul>
-              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Casal')">Assinar</a>
+              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Casal'); $('#planoTitle').html('Plano Casal')">Assinar</a>
             </div>
           </div>
             <div class="col-2"></div>
@@ -405,7 +405,7 @@
     ============================-->
     <div class="container">
       <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h3 class="modal-title">Só precisamos de algumas informações...</h3>
@@ -414,6 +414,7 @@
             <div class="modal-body">
 
               <div class="form">
+                <div class="text-center"><h3 id="planoTitle">Plano</h3></div>
                 <form class="contactForm" role="form" name="gform" id="gform">
 
                   <div class="form-group">
