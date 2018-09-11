@@ -1,6 +1,25 @@
 jQuery(document).ready(function($) {
   "use strict";
 
+  //CEP
+  $("input.cep").mask("99999-999", {completed:function(){
+    var cep = $(this).val().replace(/[^0-9]/,"");
+    if (cep.length != 8) {
+      return false;
+    }
+
+    var url = "https://viacep.com.br/ws/"+cep+"/json/";
+    $.getJSON(url, function(dadosRetorno){
+      try{
+        $("input.endereco").val(dadosRetorno.logradouro);
+        $("input.bairro").val(dadosRetorno.bairro);
+        $("input.cidade").val(dadosRetorno.localidade);
+        $("input.uf").val(dadosRetorno.uf);
+        $("input.numero").focus();
+      }catch (e) {}
+    });
+  }});
+
   //Contact
   $('form.contactForm').submit(function() {
     var f = $(this).find('.form-group'),
@@ -90,12 +109,28 @@ jQuery(document).ready(function($) {
     });
     if (ferror) return false;
     else var str = $(this).serialize();
-    $.ajax({
+
+
+
+    //action="https://docs.google.com/forms/d/e/1FAIpQLSfsFgJ7YgDlzQG9C10yV1yVpiQXrO7SlOQJqa8ANB1n1yGSJg/formResponse?"
+
+    if ($(this).attr("id") == "gform") {
+      $.get("https://docs.google.com/forms/d/e/1FAIpQLSfsFgJ7YgDlzQG9C10yV1yVpiQXrO7SlOQJqa8ANB1n1yGSJg/formResponse?", str);
+      //$(this).ajaxSubmit({url: "https://docs.google.com/forms/d/e/1FAIpQLSfsFgJ7YgDlzQG9C10yV1yVpiQXrO7SlOQJqa8ANB1n1yGSJg/formResponse?", type: "get"});
+      $('#gform *').fadeOut(1000);
+      $(this).prepend('Seu pedido foi enviado com sucesso, entraremos em contato com você muito em breve. Obrigado por nos contatar!');
+      $('.contactForm').find("input, textarea").val("");
+    }
+
+
+
+
+
+    /*$.ajax({
       type: "POST",
       url: "contactform/contactform.php",
       data: str,
       success: function(msg) {
-        // alert(msg);
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
@@ -107,7 +142,7 @@ jQuery(document).ready(function($) {
         }
 
       }
-    });
+    });*/
     return false;
   });
 
