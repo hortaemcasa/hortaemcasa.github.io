@@ -534,6 +534,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-img {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
   height: 510px;
   overflow: hidden;
 }
@@ -877,6 +880,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #pricing h4 span {
   color: #bababa;
+  font-size: 20px;
+}
+
+#pricing .cents {
+  color: #1de099 !important;
   font-size: 20px;
 }
 
