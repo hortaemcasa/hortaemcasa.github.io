@@ -63,7 +63,8 @@
         <ul class="nav-menu">
           <li><a href="#about">Sobre</a></li>
           <li><a href="#features">Benefícios</a></li>
-          <li><a href="#pricing">Planos</a></li>
+          <li><a href="#pricing">Assine</a></li>
+          <li><a href="#testimonials">Opiniões</a></li>
           <li><a href="#faq">Perguntas frequentes</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
@@ -450,49 +451,45 @@
           <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h3 class="modal-title">Só precisamos de algumas informações...</h3>
+                <h3 class="modal-title" id="title_modal">Só precisamos de algumas informações...</h3>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
 
                 <div class="form">
-                  <div class="text-center"><h3 id="planoTitle">Plano</h3></div>
                   <form class="contactForm" role="form" name="gform" id="gform">
+                  <div class="text-center"><h3 id="planoTitle">Plano</h3></div>
 
                     <div class="form-group">
                       <input type="text" class="form-control" placeholder="Informe seu nome" data-rule="minlen:5" data-msg="Informe seu nome" name="entry.612046530" id="entry.612046530" />
                       <div class="validation"></div>
                     </div>
-                    <div class="form-group">
-                      <input type="email" class="form-control" name="entry.1176224029" id="entry.1176224029" placeholder="Seu email" data-rule="email" data-msg="Insira um e-mail válido" />
-                      <div class="validation"></div>
-                    </div>
                     <div class="form-row">
+                      <div class="form-group col-lg-6">
+                        <input type="email" class="form-control" name="entry.1176224029" id="entry.1176224029" placeholder="Seu email" data-rule="email" data-msg="Insira um e-mail válido" />
+                        <div class="validation"></div>
+                      </div>
                       <div class="form-group col-lg-6">
                         <input type="text" class="form-control" placeholder="Telefone" data-rule="minlen:8" data-msg="Insira um telefone válido" name="entry.244302430" id="entry.244302430"/>
                         <div class="validation"></div>
                       </div>
+                    </div>
+                    <div class="form-row">
                       <div class="form-group col-lg-6">
                         <input type="text" class="form-control cep" placeholder="CEP" data-rule="minlen:8" data-msg="Insira um CEP válido" name="entry.347303003" id="entry.347303003"/>
                         <div class="validation"></div>
                       </div>
-                    </div>
-                    <div class="form-row">
                       <div class="form-group col-lg-6">
                         <input type="text" class="form-control cidade" placeholder="Cidade" readonly/>
-                      </div>
-                      <div class="form-group col-lg-6">
-                        <input type="text" class="form-control uf" placeholder="UF" readonly/>
                         <div class="validation"></div>
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-lg-6">
-                        <input type="text" class="form-control bairro" placeholder="Bairro" readonly/>
+                        <input type="text" class="form-control bairro" placeholder="Bairro" name="entry.1127873065" id="entry.1127873065" readonly/>
                       </div>
                       <div class="form-group col-lg-6">
                         <input type="text" class="form-control endereco" placeholder="Rua" name="entry.1639274281" id="entry.1639274281" readonly/>
-                        <div class="validation"></div>
                       </div>
                     </div>
                     <div class="form-row">
@@ -509,11 +506,30 @@
                       <textarea class="form-control" placeholder="Tem alguma hortaliça que você não quer receber?" name="entry.1732107200" id="entry.1732107200"></textarea>
                     </div>
                     <input type="hidden" class="form-control plano" placeholder="Plano" name="entry.644091263" id="entry.644091263"/>
+                    <input type="hidden" class="form-control atendido" placeholder="Atendido" name="entry.315585426" id="entry.315585426" />
                     <div class="text-center">
                       <button type="submit" title="Enviar">Enviar</button>
                     </div>
 
                   </form>
+                  <div class="container" id="retorno_compra" style="display: none;">
+                    <p>Já chegamos no seu bairro! Atualmente a entrega em <span id="bairro_retorno"></span> é realizada às quartas-feiras. Se quiser receber já na próxima semana, basta efetuar o pagamento pelo PagSeguro:
+                    </p>
+                    <div class="text-center"><!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                    <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+                    <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                    <input type="hidden" id="code_pagseguro" name="code" value="" />
+                    <input type="hidden" name="iot" value="button" />
+                    <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                    </form>
+                    <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+                    </div>
+                  </div>
+                  <div class="container" id="retorno_espera" style="display: none;">
+                    <p>Seu pedido foi enviado com sucesso, entraremos em contato com você muito em breve. Obrigado por nos contatar!
+                    </p>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -521,6 +537,8 @@
           </div>
         </div>
       </div>
+
+
 
     </section><!-- #contact -->
 

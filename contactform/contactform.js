@@ -15,6 +15,14 @@ jQuery(document).ready(function($) {
         $("input.bairro").val(dadosRetorno.bairro);
         $("input.cidade").val(dadosRetorno.localidade);
         $("input.uf").val(dadosRetorno.uf);
+
+        var bairros = ['Tijuca', 'Grajaú', 'Maracanã', 'São Cristóvão', 'Usina', 'Vila Isabel', 'Cachambi', 'Méier', 'Del Castilho', 'Engenho de Dentro', 'São Francisco Xavier', 'Engenho Novo', 'Riachuelo', 'Rocha', 'Sampaio', 'Madureira', 'Oswaldo Cruz', 'Copacabana', 'Turiaçu', 'Rocha Miranda', 'Cidade Universitária'];
+        if (bairros.indexOf($('input.bairro').val()) > -1) {
+          $("input.atendido").val('S');
+          $('#bairro_retorno').html('<b>' + $("input.bairro").val() + '</b>');
+        } else {
+          $("input.atendido").val('N');
+        }
         $("input.numero").focus();
       }catch (e) {}
     });
@@ -112,14 +120,26 @@ jQuery(document).ready(function($) {
 
 
 
-    //action="https://docs.google.com/forms/d/e/1FAIpQLSfsFgJ7YgDlzQG9C10yV1yVpiQXrO7SlOQJqa8ANB1n1yGSJg/formResponse?"
 
     if ($(this).attr("id") == "gform") {
+      //$.get("http://www.google.com/?", str);
+      $('#title_modal').html($("#planoTitle").html());
+      if ($("input.atendido").val() == 'S') {
+        $('#bairro_retorno').html('<b>' + $("input.bairro").val() + '</b>');
+        if ($('input.plano').val() == 'Avulso') {
+          $('#code_pagseguro').val("195F59FE8D8D58FDD4D09FA77BEC71ED");
+        } else if ($('input.plano').val() == 'Solteiro') {
+          $('#code_pagseguro').val("D42486F5F0F089C66405CF9B3AC12CD9");
+        } else if ($('input.plano').val() == 'Casal') {
+          $('#code_pagseguro').val("87882C7BA9A9673774761FA087E49E19");
+        }
+        $('#retorno_compra').show();
+      } else {
+        $('#retorno_espera').show();
+      }
       $.get("https://docs.google.com/forms/d/e/1FAIpQLSfsFgJ7YgDlzQG9C10yV1yVpiQXrO7SlOQJqa8ANB1n1yGSJg/formResponse?", str);
-      //$(this).ajaxSubmit({url: "https://docs.google.com/forms/d/e/1FAIpQLSfsFgJ7YgDlzQG9C10yV1yVpiQXrO7SlOQJqa8ANB1n1yGSJg/formResponse?", type: "get"});
-      $('#gform *').fadeOut(1000);
-      $(this).prepend('Seu pedido foi enviado com sucesso, entraremos em contato com você muito em breve. Obrigado por nos contatar!');
-      $('.contactForm').find("input, textarea").val("");
+      $('#gform *').fadeOut(100);
+      //$('.contactForm').find("input, textarea").val("");
     }
 
 
