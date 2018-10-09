@@ -1200,3 +1200,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 	background: #555;
 	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
 }
+
+.assine-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .scrollto {
+        display: none;
+    }
+    .assine-mobile {
+        display: block;
+        color: #1de099;
+        background: white;
+        border: none;
+    }
+
+    .assine-mobile:hover {
+        background: #1de099;
+    }
+
+}
