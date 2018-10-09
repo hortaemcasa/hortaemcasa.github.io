@@ -1220,4 +1220,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         background: #1de099;
     }
 
+    .not-mobile {
+        display: none;
+    }
 }
