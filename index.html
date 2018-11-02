@@ -55,18 +55,18 @@
 
       <div id="logo" class="pull-left">
         <h1 id="titlebar"><a href="#intro" class="scrollto">Horta em Casa</a></h1>
-        <a href="#pricing" class="btn btn-secondary assine-mobile">Assine</a>
+        <a href="#pricing" class="btn btn-secondary assine only-mobile scrollto">Assine</a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#features">Benefícios</a></li>
           <li><a href="#pricing">Assine</a></li>
-          <li><a href="#testimonials">Opiniões</a></li>
+          <li><a href="#features">Benefícios</a></li>
           <li><a href="#faq">Perguntas frequentes</a></li>
+          <li><a href="#testimonials">Opiniões</a></li>
+          <li><a href="#about">Sobre</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -77,54 +77,89 @@
     Intro Section
   ============================-->
   <section id="intro">
-
-    <div class="intro-text" style="border-top-width: 1">
-      <h1></h1>
-      <h2>HORTA EM CASA</h2>
+    <div class="container">
+      <div class="intro-text" style="border-top-width: 1">
+        <div class="row">
+          <div class="col-lg-7">
+            <h2>Receba toda semana em sua casa frutas, verduras, legumes e temperos selecionados para sua mesa.</h2>
+            <h3 class="not-mobile">Conheça nossas assinaturas e entre nesse estilo de vida sadio com a gente!</h3>
+            <div style="text-align: center">
+              <a href="#pricing" class="btn btn-secondary assine scrollto bigger">Assine</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </section><!-- #intro -->
 
   <main id="main">
 
+
     <!--==========================
-      About Us Section
+      Pricing Section
     ============================-->
-    <section id="about" class="section-bg">
-      <div class="container-fluid">
+    <section id="pricing" class="section-bg">
+      <div class="container">
+
         <div class="section-header">
-          <h3 class="section-title">Sobre nós</h3>
+          <h3 class="section-title">Planos</h3>
           <span class="section-divider"></span>
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <p>Escolha entre a nossa cesta avulsa ou nossos planos mensais que abrangem <b>4 entregas</b>. Todas as nossas cestas contém 4 variedades de frutas, 3 de legumes, 2 de verduras e 2 de temperos.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row">
-          <div class="col-lg-5 offset-lg-1 about-img wow fadeInLeft">
-            <img src="img/about-img.jpg" alt="" class="rounded">
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft">
+              <h3>Cesta Avulsa M</h3>
+              <h4><sup>R$</sup>35<span> uma entrega </span></h4>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i> 8 a 12 porções de frutas</li>
+                <li><i class="ion-android-checkmark-circle"></i> 6 a 8 porções de legumes</li>
+                <li><i class="ion-android-checkmark-circle"></i> 2 porções de verduras</li>
+                <li><i class="ion-android-checkmark-circle"></i> 2 porções de temperos naturais</li>
+              </ul>
+              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Avulso'); $('#planoTitle').html('Cesta Avulsa')">Assinar</a>
+            </div>
           </div>
 
-          <div class="col-lg-5 content wow fadeInRight text-justify">
-            <h2 class="text-left">
-                Levamos saúde<br> e qualidade até você!
-            </h2>
-            <h3>
-              Somos um serviço de assinatura que <b>seleciona e entrega</b> hortaliças frescas e de qualidade em domicílio. Por um valor mensal você recebe toda semana legumes, frutas, verduras e condimentos naturais variados priorizando sempre os que estiverem em melhor qualidade na estação.
-            </h3>
-            <h3>
-                Nosso foco é facilitar a vida dos nossos clientes. Sem trânsito, sem filas e sem perda de tempo, queremos fomentar o hábito da alimentação saudável com praticidade.
-            </h3>
-            <h3>
-              Além disso, você pode optar por receber nossos produtos no trabalho também, e estamos prontos para personalizar a sua cesta caso você tenha alguma restrição alimentar.
-            </h3>
-            <h3>
-              Conheça nossas assinaturas e entre nesse estilo de vida sadio com a gente!
-            </h3>
-
-
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft">
+              <h3>Solteiro / Cesta M</h3>
+              <h4><sup>R$</sup>109<span> mês </span></h4>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i> 8 a 12 porções de frutas</li>
+                <li><i class="ion-android-checkmark-circle"></i> 6 a 8 porções de legumes</li>
+                <li><i class="ion-android-checkmark-circle"></i> 2 porções de verduras</li>
+                <li><i class="ion-android-checkmark-circle"></i> 2 porções de temperos naturais</li>
+              </ul>
+              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Solteiro'); $('#planoTitle').html('Plano Solteiro')">Assinar</a>
+            </div>
           </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInRight">
+              <h3>Casal / Cesta G</h3>
+              <h4><sup>R$</sup>159<span> mês</span></h4>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i> 15 a 20 porções de frutas</li>
+                <li><i class="ion-android-checkmark-circle"></i> 10 a 14 porções de legumes</li>
+                <li><i class="ion-android-checkmark-circle"></i> 3 porções de verduras</li>
+                <li><i class="ion-android-checkmark-circle"></i> 2 porções de temperos naturais</li>
+              </ul>
+              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Casal'); $('#planoTitle').html('Plano Casal')">Assinar</a>
+            </div>
+          </div>
+            <div class="col-2"></div>
+
         </div>
-
       </div>
-    </section><!-- #about -->
+    </section><!-- #pricing -->
 
     <!--==========================
       Product Featuress Section
@@ -176,121 +211,6 @@
       </div>
 
     </section><!-- #features -->
-
-
-    <!--==========================
-      Pricing Section
-    ============================-->
-    <section id="pricing" class="section-bg">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">Planos</h3>
-          <span class="section-divider"></span>
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <p>Escolha entre a nossa cesta avulsa ou nossos planos mensais que abrangem <b>4 entregas</b>. Todas as nossas cestas contém 4 variedades de frutas, 3 de legumes, 2 de verduras e 2 de temperos.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4">
-            <div class="box featured wow fadeInLeft">
-              <h3>Cesta Avulsa M</h3>
-              <h4><sup>R$</sup>35<span> uma entrega </span></h4>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> 8 a 12 porções de frutas</li>
-                <li><i class="ion-android-checkmark-circle"></i> 6 a 8 porções de legumes</li>
-                <li><i class="ion-android-checkmark-circle"></i> 2 porções de verduras</li>
-                <li><i class="ion-android-checkmark-circle"></i> 2 porções de temperos naturais</li>
-              </ul>
-              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Avulso'); $('#planoTitle').html('Cesta Avulsa')">Assinar</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="box featured wow fadeInLeft">
-              <h3>Solteiro / Cesta M</h3>
-              <h4><sup>R$</sup>109<span> mês </span></h4>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> 8 a 12 porções de frutas</li>
-                <li><i class="ion-android-checkmark-circle"></i> 6 a 8 porções de legumes</li>
-                <li><i class="ion-android-checkmark-circle"></i> 2 porções de verduras</li>
-                <li><i class="ion-android-checkmark-circle"></i> 2 porções de temperos naturais</li>
-              </ul>
-              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Solteiro'); $('#planoTitle').html('Plano Solteiro')">Assinar</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="box featured wow fadeInRight">
-              <h3>Casal / Cesta G</h3>
-              <h4><sup>R$</sup>159<span> mês</span></h4>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> 15 a 20 porções de frutas</li>
-                <li><i class="ion-android-checkmark-circle"></i> 10 a 14 porções de legumes</li>
-                <li><i class="ion-android-checkmark-circle"></i> 3 porções de verduras</li>
-                <li><i class="ion-android-checkmark-circle"></i> 2 porções de temperos naturais</li>
-              </ul>
-              <a href="#" class="get-started-btn" data-toggle="modal" data-target="#myModal" onclick="$('input.plano').val('Casal'); $('#planoTitle').html('Plano Casal')">Assinar</a>
-            </div>
-          </div>
-            <div class="col-2"></div>
-
-        </div>
-      </div>
-    </section><!-- #pricing -->
-
-    <section id="testimonials">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">O que nossos clientes estão falando</h3>
-          <span class="section-divider"></span>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-center m-auto">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Carousel indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <!-- Wrapper for carousel items -->
-                    <div class="carousel-inner">
-                        <div class="item carousel-item active">
-                            <div class="img-box"><img src="img/clients/1.jpg" alt=""></div>
-                            <p class="testimonial">Eu fiquei feliz com minha compra. Gostei de tudo, principalmente, o cuidado dos produtos embalados!</p>
-                            <p class="overview"><b>Lídia Pereira</b></p>
-                        </div>
-                        <div class="item carousel-item">
-                            <div class="img-box"><img src="img/clients/2.jpg" alt=""></div>
-                            <p class="testimonial">Atendimento e pontualidade impecáveis! Adorei!!! Muito legal!! Tudo fresquinho!</p>
-                            <p class="overview"><b>Larissa Franco</b></p>
-                        </div>
-                        <div class="item carousel-item">
-                            <div class="img-box"><img src="img/clients/3.jpg" alt=""></div>
-                            <p class="testimonial">Ótima!! Recomendo à todos!! Produtos frescos e de ótima qualidade sem sair de casa. Muita praticidade!! :grin:</p>
-                            <p class="overview"><b>Elaine Diniz</b></p>
-                        </div>
-                    </div>
-                    <!-- Carousel controls -->
-                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
 
     <!--==========================
       Frequently Asked Questions Section
@@ -390,6 +310,93 @@
 
       </div>
     </section><!-- #faq -->
+
+    <section id="testimonials">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">O que nossos clientes estão falando</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-center m-auto">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="img-box"><img src="img/clients/1.jpg" alt=""></div>
+                            <p class="testimonial">Eu fiquei feliz com minha compra. Gostei de tudo, principalmente, o cuidado dos produtos embalados!</p>
+                            <p class="overview"><b>Lídia Pereira</b></p>
+                        </div>
+                        <div class="item carousel-item">
+                            <div class="img-box"><img src="img/clients/2.jpg" alt=""></div>
+                            <p class="testimonial">Atendimento e pontualidade impecáveis! Adorei!!! Muito legal!! Tudo fresquinho!</p>
+                            <p class="overview"><b>Larissa Franco</b></p>
+                        </div>
+                        <div class="item carousel-item">
+                            <div class="img-box"><img src="img/clients/3.jpg" alt=""></div>
+                            <p class="testimonial">Ótima!! Recomendo à todos!! Produtos frescos e de ótima qualidade sem sair de casa. Muita praticidade!! :grin:</p>
+                            <p class="overview"><b>Elaine Diniz</b></p>
+                        </div>
+                    </div>
+                    <!-- Carousel controls -->
+                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about" class="section-bg">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class="section-title">Sobre nós</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5 offset-lg-1 about-img wow fadeInLeft">
+            <img src="img/about-img.jpg" alt="" class="rounded">
+          </div>
+
+          <div class="col-lg-5 content wow fadeInRight text-justify">
+            <h2 class="text-left">
+                Levamos saúde<br> e qualidade até você!
+            </h2>
+            <h3>
+              Somos um serviço de assinatura que <b>seleciona e entrega</b> hortaliças frescas e de qualidade em domicílio. Por um valor mensal você recebe toda semana legumes, frutas, verduras e condimentos naturais variados priorizando sempre os que estiverem em melhor qualidade na estação.
+            </h3>
+            <h3>
+                Nosso foco é facilitar a vida dos nossos clientes. Sem trânsito, sem filas e sem perda de tempo, queremos fomentar o hábito da alimentação saudável com praticidade.
+            </h3>
+            <h3>
+              Além disso, você pode optar por receber nossos produtos no trabalho também, e estamos prontos para personalizar a sua cesta caso você tenha alguma restrição alimentar.
+            </h3>
+            <h3>
+              Conheça nossas assinaturas e entre nesse estilo de vida sadio com a gente!
+            </h3>
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
 
 
     <!--==========================

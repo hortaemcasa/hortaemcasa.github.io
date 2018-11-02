@@ -91,7 +91,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   letter-spacing: 3px;
   text-transform: uppercase;
-  display: none;
+}
+
+#header #logo a {
+  position: fixed;
+  top: 0;
+  margin: 20px 20px 0 0;
+  border: 0;
 }
 
 #header #logo h1 a, #header #logo h1 a:hover {
@@ -125,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #intro {
   width: 100%;
-  height: 70vh;
+  min-height: 70vh;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg-intro.jpg") center top no-repeat;
   background-size: cover;
   position: relative;
@@ -138,42 +144,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-text {
-  position: absolute;
-  left: 0;
-  top: 60px;
-  right: 0;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
+  padding-top: 100px;
+}
+
+#intro .intro-text h2 {
+  color: #a3fab3;
+  #padding: 15px;
+  #padding-left: 0px;
+  #font-size: 72px;
+  font-weight: 500;
+  #line-height: 56px;
+}
+
+@media (max-width: 1024px) {
+  #intro .intro-text h2 {
+    color: #fff;
+  }
+}
+
+#intro .intro-text h3 {
+  color: #fff;
+}
+
+#intro .intro-text p {
+  margin: 0px
 }
 
 #intro h2 {
-  border-top-style: solid;
-  border-bottom-style: solid;
-  margin: 30px 0 10px 0;
-  padding: 15px;
-  font-size: 72px;
-  font-weight: 400;
-  line-height: 56px;
-  color: #fff;
+  #margin: 30px 0 10px 0;
+  #padding: 15px;
+  #font-size: 72px;
+  #font-weight: 400;
+  #line-height: 56px;
+  #color: #fff;
 }
 
 #intro h1 {
-  margin: 30px 0 10px 0;
-  padding: 0 15px;
-  font-size: 72px;
-  font-weight: 400;
-  line-height: 56px;
-  color: #fff;
+  #margin: 30px 0 10px 0;
+  #padding: 0 15px;
+  #font-size: 72px;
+  #font-weight: 400;
+  #line-height: 56px;
+  #color: #fff;
 }
 
 @media (max-width: 768px) {
   #intro h2 {
-    font-size: 28px;
-    line-height: 36px;
+    #font-size: 28px;
+    #line-height: 36px;
   }
 }
 
@@ -186,9 +204,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #intro p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 20px;
+    #font-size: 18px;
+    #line-height: 24px;
+    #margin-bottom: 20px;
   }
 }
 
@@ -209,73 +227,6 @@ h1, h2, h3, h4, h5, h6 {
 #intro .btn-get-started:hover {
   color: #1de099;
   background: #fff;
-}
-
-#intro .product-screens {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: 50%;
-}
-
-#intro .product-screens img {
-  //box-shadow: 0px -2px 19px 4px rgba(0, 0, 0, 0.29);
-}
-
-
-
-#intro .product-screens .product-screen-0 {
-  position: absolute;
-  z-index: 10;
-  left: calc(50% + 200px);
-  bottom: 0;
-  top: 90px;
-}
-
-#intro .product-screens .product-screen-1 {
-  position: absolute;
-  z-index: 30;
-  left: calc(50% + 50px);
-  bottom: 0;
-  top: 200px;
-}
-
-#intro .product-screens .product-screen-2 {
-  position: absolute;
-  z-index: 20;
-  left: calc(50% - 100px);
-  bottom: 0;
-  top: 200px;
-}
-
-#intro .product-screens .product-screen-3 {
-  position: absolute;
-  z-index: 10;
-  left: calc(50% - 250px);
-  bottom: 0;
-  top: 200px;
-}
-
-#intro .product-screens .product-screen-4 {
-  position: absolute;
-  z-index: 0;
-  left: calc(50% - 400px);
-  bottom: 0;
-  top: 200px;
-}
-
-@media (max-width: 767px) {
-  #intro .product-screens .product-screen-1 {
-    position: static;
-    padding-top: 30px;
-  }
-  #intro .product-screens .product-screen-2, #intro .product-screens .product-screen-3 {
-    display: none;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -872,6 +823,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
   background: #fff;
   text-align: center;
+  border-radius: 8px;
 }
 
 #pricing h3 {
@@ -929,14 +881,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  background: linear-gradient(45deg, #90ee90, #1de099);
 }
 
 #pricing .featured {
   border: 2px solid #1de099;
-}
-
-#pricing .featured .get-started-btn {
-  background: linear-gradient(45deg, #90ee90, #1de099);
 }
 
 /* Frequently Asked Questions Section
@@ -1196,12 +1145,27 @@ body.mobile-nav-active #mobile-nav-toggle {
 	border-color: transparent;
 	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
 }
+
 .carousel-indicators li.active {
 	background: #555;
 	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
 }
 
-.assine-mobile {
+.assine {
+    color: #1de099;
+    background: white;
+    border: none;
+}
+
+.assine:hover {
+    background: #1de099;
+}
+
+.bigger {
+  width: 200px;
+}
+
+.only-mobile {
     display: none;
 }
 
@@ -1209,15 +1173,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     .scrollto {
         display: none;
     }
-    .assine-mobile {
+    .only-mobile {
         display: block;
-        color: #1de099;
-        background: white;
-        border: none;
-    }
-
-    .assine-mobile:hover {
-        background: #1de099;
     }
 
     .not-mobile {
