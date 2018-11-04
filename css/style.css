@@ -28,7 +28,6 @@ a:hover, a:active, a:focus {
 p {
   padding: 0;
   margin: 0 0 30px 0;
-  font-size: 18 px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -149,50 +148,23 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro .intro-text h2 {
   color: #a3fab3;
-  #padding: 15px;
-  #padding-left: 0px;
-  #font-size: 72px;
   font-weight: 500;
-  #line-height: 56px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   #intro .intro-text h2 {
+    font-size: 2rem;
     color: #fff;
   }
 }
 
 #intro .intro-text h3 {
   color: #fff;
+  font-size: 30px;
 }
 
 #intro .intro-text p {
   margin: 0px
-}
-
-#intro h2 {
-  #margin: 30px 0 10px 0;
-  #padding: 15px;
-  #font-size: 72px;
-  #font-weight: 400;
-  #line-height: 56px;
-  #color: #fff;
-}
-
-#intro h1 {
-  #margin: 30px 0 10px 0;
-  #padding: 0 15px;
-  #font-size: 72px;
-  #font-weight: 400;
-  #line-height: 56px;
-  #color: #fff;
-}
-
-@media (max-width: 768px) {
-  #intro h2 {
-    #font-size: 28px;
-    #line-height: 36px;
-  }
 }
 
 #intro p {
@@ -200,14 +172,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   padding: 0 15px;
   font-size: 24px;
-}
-
-@media (max-width: 768px) {
-  #intro p {
-    #font-size: 18px;
-    #line-height: 24px;
-    #margin-bottom: 20px;
-  }
 }
 
 #intro .btn-get-started {
@@ -508,6 +472,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-img img {
   margin-left: -15px;
   max-width: 100%;
+  border-radius:10px;
 }
 
 @media (max-width: 768px) {
@@ -695,52 +660,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     float: none;
     padding: 0 0 30px 0;
   }
-}
-
-/* Call To Action Section
---------------------------------*/
-#call-to-action {
-  overflow: hidden;
-  background: linear-gradient(rgba(29, 200, 205, 0.65), rgba(29, 205, 89, 0.2)), url(../img/call-to-action-bg.jpg) fixed center center;
-  background-size: cover;
-  padding: 80px 0;
-}
-
-#call-to-action .cta-title {
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-#call-to-action .cta-text {
-  color: #fff;
-}
-
-@media (min-width: 769px) {
-  #call-to-action .cta-btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-}
-
-#call-to-action .cta-btn {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 30px;
-  border-radius: 25px;
-  transition: background 0.5s;
-  margin: 10px;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-#call-to-action .cta-btn:hover {
-  background: #1de099;
-  border: 2px solid #1de099;
 }
 
 /* More Features Section
