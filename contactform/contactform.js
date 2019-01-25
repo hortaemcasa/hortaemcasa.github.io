@@ -16,8 +16,11 @@ jQuery(document).ready(function($) {
         $("input.cidade").val(dadosRetorno.localidade);
         $("input.uf").val(dadosRetorno.uf);
 
-        var bairros = ['Tijuca', 'Grajaú', 'Maracanã', 'São Cristóvão', 'Usina', 'Vila Isabel', 'Cachambi', 'Méier', 'Del Castilho', 'Engenho de Dentro', 'São Francisco Xavier', 'Engenho Novo', 'Riachuelo', 'Rocha', 'Sampaio', 'Madureira', 'Oswaldo Cruz', 'Copacabana', 'Turiaçu', 'Rocha Miranda', 'Cidade Universitária'];
-        if (bairros.indexOf($('input.bairro').val()) > -1) {
+        var bairros = ['Tijuca', 'Grajaú', 'Maracanã', 'São Cristóvão', 'Usina', 'Vila Isabel', 'Cachambi', 'Méier',
+          'Del Castilho', 'Engenho de Dentro', 'São Francisco Xavier', 'Engenho Novo', 'Riachuelo', 'Rocha', 'Sampaio',
+          'Madureira', 'Oswaldo Cruz', 'Copacabana', 'Turiaçu', 'Rocha Miranda', 'Cidade Universitária', 'Taquara',
+          'Freguesia', 'Realengo', 'Barra da Tijuca', 'Alto da Boa Vista', 'Ramos'];
+        if ((bairros.indexOf($('input.bairro').val()) > -1) && (dadosRetorno.localidade == 'Rio de Janeiro')) {
           $("input.atendido").val('S');
           $('#bairro_retorno').html('<b>' + $("input.bairro").val() + '</b>');
         } else {
